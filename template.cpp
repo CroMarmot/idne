@@ -1,37 +1,29 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
-typedef vector<int> vi; 
-typedef vector<vi> vvi; 
-typedef pair<int,int> ii; 
-#define sz(a) int((a).size()) 
-#define PB push_back 
-#define MP make_pair
-#define F first
-#define S second
-#define all(c) (c).begin(),(c).end() 
-#define REP(i,a,b) for (int i = a; i < b; ++i)
-#define REP2(i,a,b) for (int i = a; i <= b; ++i)
-#define tr(c,i) for(decltype((c).begin()) i = (c).begin(); i != (c).end(); i++) 
-#define present(c,x) ((c).find(x) != (c).end()) 
-#define cpresent(c,x) (find(all(c),x) != (c).end())
-#define fill(a, v) memset(a, v, sizeof a)
 typedef long long ll;
+#define ten5 100000+10
+#define MOD 1000000007
+#define rep(i,a,n) for (int i=a;i<n;i++)
+#define iif(c,t,f) ((c)?(t):(f))
+#define per(i,a,n) for (int i=n-1;i>=a;i--)
+#define pb push_back
+#define mp make_pair
+const double pi = acos(-1.0);
 
-ll modpow(ll x, ll n, ll m) 
-{
-    if (n == 0) return 1 % m;
-    ll u = modpow(x, n/2, m);
-    u = (u * u) % m;
-    if (n % 2 == 1) u = (u * x) % m;
-    return u;
+int main(){
+  return 0;
 }
 
-int main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(0);
-    // start code here
-    return 0;
-}
+/*
+ *
+ * hash prime
+   61,83,113,151,211,281,379,509683,911
+   1217,1627,2179,2909,3881,6907,9209
+   12281,16381,21841,29123,38833,51787,69061,92083
+   122777,163729,218357,291143,388211,517619,690163,999983
+   1226959,1635947,2181271,2908361,3877817,5170427,6893911,9191891
+   12255871,16341163,21788233,29050993,38734667,51646229,68861641,91815541
+   122420729,163227661,217636919,290182597,386910137,515880193,687840301,917120411
+   1000000007,1000000009
+ * */

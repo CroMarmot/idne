@@ -21,6 +21,12 @@ import argparse
 # User modifiable constants
 ###########################
 language_params = {
+        'c++17' : {
+            'TEMPLATE'    : 'template.cpp',
+            'DEBUG_FLAGS' : '-DDEBUG',
+            'COMPILE_CMD' : 'g++ -g -std=c++17 -Wall -Wextra $DBG',
+            'RUN_CMD'     : './a.out'
+            },
         'c++11' : {
             'TEMPLATE'    : 'template.cpp',
             'DEBUG_FLAGS' : '-DDEBUG',
@@ -180,7 +186,7 @@ def generate_test_script(folder, language, num_tests, problem):
             '        echo Sample Input \#$test_case\n'
             '        cat $INPUT_NAME$test_case\n'
             '    else\n'
-            '        if diff --brief --ignore-trailing-space $MY_NAME$test_case $OUTPUT_NAME$test_case; then\n'
+            '        if diff --brief -B --ignore-trailing-space $MY_NAME$test_case $OUTPUT_NAME$test_case; then\n'
             '            echo {1}{3}Sample test \#$test_case: Accepted{2} {6}\n'
             '        else\n'
             '            echo {1}{4}Sample test \#$test_case: Wrong Answer{2} {6}\n'
@@ -204,7 +210,8 @@ def generate_test_script(folder, language, num_tests, problem):
 # Main function.
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--language', '-l', default="c++11", help="The programming language you want to use "
+    parser.add_argument('--language', '-l', default="c++17", help="The programming language you want to use "
+            "(c++17)"
             "(c++11)")
     parser.add_argument('contest', help="")
     args = parser.parse_args()
